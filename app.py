@@ -2,11 +2,12 @@ import os
 from flask import Flask, render_template, request, redirect, jsonify, json
 from flask_sqlalchemy import SQLAlchemy
 from flask_marshmallow import Marshmallow
+import json
 
 app = Flask(__name__)
 app.secret_key = os.urandom(24)
 
-#app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///PC_Component.db'
+#app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///PC_Component.db' #development
 app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://yalramtyhvpjxp:034dcf8ea5d0672e8ba287038421f48b0bac336e6759a2a46fdcdfcb3b8ad0c4@ec2-44-195-240-222.compute-1.amazonaws.com:5432/dbhdo8t7o74v3c'
 
 db = SQLAlchemy(app)
@@ -69,7 +70,15 @@ class OrdersSchema(ma.Schema):
 
 @app.route('/')
 def home():
-
+    f=open('component.json',)
+    data = json.load(f)
+    for i in range(len(data)):
+        #print(data[i])
+        new_component = PC_Component(category=data[i]["category"], component_type=data[i]["component_type"],
+                           name=data[i]["name"], price=data[i]["price"], rate=data[i]["rate"], sub_category=data[i]["sub_category"])
+        db.session.add(new_component)
+        db.session.commit()
+    f.close()
     return render_template('index.html')
 
 

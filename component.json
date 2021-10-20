@@ -1,0 +1,466 @@
+[
+  {
+    "category": "Computers",
+    "component_type": "CPU",
+    "name": "Intel Core I3 9100F",
+    "price": 290,
+    "rate": 2.5,
+    "sub_category": "Desktop_PC / Laptop"
+  },
+  {
+    "category": "Computers",
+    "component_type": "CPU",
+    "name": "Intel Core I5 9400F",
+    "price": 530,
+    "rate": 4.5,
+    "sub_category": "Desktop_PC / Laptop"
+  },
+  {
+    "category": "Computers",
+    "component_type": "CPU",
+    "name": "Intel Core I5 9600KF",
+    "price": 750,
+    "rate": 6.5,
+    "sub_category": "Desktop_PC / Laptop"
+  },
+  {
+    "category": "Computers",
+    "component_type": "CPU",
+    "name": "Intel Core I7 9700KF",
+    "price": 1400,
+    "rate": 8,
+    "sub_category": "Desktop_PC / Laptop"
+  },
+  {
+    "category": "Computers",
+    "component_type": "CPU",
+    "name": "Intel Core I9 9900KF",
+    "price": 1700,
+    "rate": 9,
+    "sub_category": "Desktop_PC / Laptop"
+  },
+  {
+    "category": "Computers",
+    "component_type": "CPU",
+    "name": "AMD RYZEN 3 1200",
+    "price": 230,
+    "rate": 2,
+    "sub_category": "Desktop_PC / Laptop"
+  },
+  {
+    "category": "Computers",
+    "component_type": "CPU",
+    "name": "AMD RYZEN 5 3600",
+    "price": 700,
+    "rate": 4.5,
+    "sub_category": "Desktop_PC / Laptop"
+  },
+  {
+    "category": "Computers",
+    "component_type": "CPU",
+    "name": "AMD RYZEN 7 2700X",
+    "price": 830,
+    "rate": 5,
+    "sub_category": "Desktop_PC / Laptop"
+  },
+  {
+    "category": "Computers",
+    "component_type": "CPU",
+    "name": "AMD RYZEN 7 3700X",
+    "price": 1000,
+    "rate": 6.5,
+    "sub_category": "Desktop_PC / Laptop"
+  },
+  {
+    "category": "Computers",
+    "component_type": "CPU",
+    "name": "AMD RYZEN 7 3800X",
+    "price": 1370,
+    "rate": 8,
+    "sub_category": "Desktop_PC / Laptop"
+  },
+  {
+    "category": "Computers",
+    "component_type": "CPU",
+    "name": "AMD RYZEN 9 3900X",
+    "price": 1650,
+    "rate": 9,
+    "sub_category": "Desktop_PC / Laptop"
+  },
+  {
+    "category": "Computers",
+    "component_type": "GPU",
+    "name": "NVIDIA GTX 1650",
+    "price": 650,
+    "rate": 4,
+    "sub_category": "Desktop_PC / Laptop"
+  },
+  {
+    "category": "Computers",
+    "component_type": "GPU",
+    "name": "NVIDIA GTX 1660",
+    "price": 1000,
+    "rate": 5.5,
+    "sub_category": "Desktop_PC / Laptop"
+  },
+  {
+    "category": "Computers",
+    "component_type": "GPU",
+    "name": "NVIDIA RTX 2060",
+    "price": 1550,
+    "rate": 7,
+    "sub_category": "Desktop_PC / Laptop"
+  },
+  {
+    "category": "Computers",
+    "component_type": "GPU",
+    "name": "NVIDIA RTX 2070",
+    "price": 2000,
+    "rate": 8,
+    "sub_category": "Desktop_PC / Laptop"
+  },
+  {
+    "category": "Computers",
+    "component_type": "GPU",
+    "name": "NVIDIA RTX 2080",
+    "price": 3000,
+    "rate": 9,
+    "sub_category": "Desktop_PC / Laptop"
+  },
+  {
+    "category": "Computers",
+    "component_type": "MotherBoard",
+    "name": "ASUS PRIME H310M-K",
+    "price": 220,
+    "rate": 2.5,
+    "sub_category": "Desktop_PC"
+  },
+  {
+    "category": "Computers",
+    "component_type": "MotherBoard",
+    "name": "ASUS PRIME B450M-A",
+    "price": 300,
+    "rate": 3,
+    "sub_category": "Desktop_PC"
+  },
+  {
+    "category": "Computers",
+    "component_type": "MotherBoard",
+    "name": "ASUS B250F STRIX GAMING",
+    "price": 400,
+    "rate": 4,
+    "sub_category": "Desktop_PC"
+  },
+  {
+    "category": "Computers",
+    "component_type": "MotherBoard",
+    "name": "ASUS TUF B360-PRO GAMING WI-FI",
+    "price": 490,
+    "rate": 5,
+    "sub_category": "Desktop_PC"
+  },
+  {
+    "category": "Computers",
+    "component_type": "MotherBoard",
+    "name": "ASUS PRIME X570-P",
+    "price": 770,
+    "rate": 6.5,
+    "sub_category": "Desktop_PC"
+  },
+  {
+    "category": "Computers",
+    "component_type": "MotherBoard",
+    "name": "ASUS ROG STRIX Z390-E GAMING",
+    "price": 970,
+    "rate": 7.5,
+    "sub_category": "Desktop_PC"
+  },
+  {
+    "category": "Computers",
+    "component_type": "MotherBoard",
+    "name": "ASUS ROG STRIX X570-E GAMING",
+    "price": 1230,
+    "rate": 8.5,
+    "sub_category": "Desktop_PC"
+  },
+  {
+    "category": "Computers",
+    "component_type": "MotherBoard",
+    "name": "ASUS ROG ZENITH II EXTREME TRX40",
+    "price": 2690,
+    "rate": 10,
+    "sub_category": "Desktop_PC"
+  },
+  {
+    "category": "Computers",
+    "component_type": "MotherBoard",
+    "name": "MSI A320M-A PRO MAX",
+    "price": 240,
+    "rate": 2.5,
+    "sub_category": "Desktop_PC"
+  },
+  {
+    "category": "Computers",
+    "component_type": "MotherBoard",
+    "name": "MSI B450 GAMING PLUS",
+    "price": 320,
+    "rate": 3.5,
+    "sub_category": "Desktop_PC"
+  },
+  {
+    "category": "Computers",
+    "component_type": "MotherBoard",
+    "name": "MSI MAG B365M MORTAR",
+    "price": 430,
+    "rate": 4.5,
+    "sub_category": "Desktop_PC"
+  },
+  {
+    "category": "Computers",
+    "component_type": "MotherBoard",
+    "name": "MSI X99A SLI PLUS",
+    "price": 690,
+    "rate": 6,
+    "sub_category": "Desktop_PC"
+  },
+  {
+    "category": "Computers",
+    "component_type": "MotherBoard",
+    "name": "MSI PRESTIGE X570 CREATION",
+    "price": 1600,
+    "rate": 9,
+    "sub_category": "Desktop_PC"
+  },
+  {
+    "category": "Computers",
+    "component_type": "MotherBoard",
+    "name": "MSI CREATOR TRX40",
+    "price": 2500,
+    "rate": 10,
+    "sub_category": "Desktop_PC"
+  },
+  {
+    "category": "Computers",
+    "component_type": "PC_Case",
+    "name": "TITAN LUMINA 2",
+    "price": 130,
+    "rate": 1.5,
+    "sub_category": "Desktop_PC"
+  },
+  {
+    "category": "Computers",
+    "component_type": "PC_Case",
+    "name": "TITAN LUMINA 3 RGB",
+    "price": 230,
+    "rate": 2,
+    "sub_category": "Desktop_PC"
+  },
+  {
+    "category": "Computers",
+    "component_type": "PC_Case",
+    "name": "SHARKOON TG6 RGB",
+    "price": 300,
+    "rate": 2.5,
+    "sub_category": "Desktop_PC"
+  },
+  {
+    "category": "Computers",
+    "component_type": "PC_Case",
+    "name": "SHARKOON ELITE SHARK CA200G",
+    "price": 390,
+    "rate": 3,
+    "sub_category": "Desktop_PC"
+  },
+  {
+    "category": "Computers",
+    "component_type": "PC_Case",
+    "name": "NZXT H440 RAZER",
+    "price": 500,
+    "rate": 4,
+    "sub_category": "Desktop_PC"
+  },
+  {
+    "category": "Computers",
+    "component_type": "PC_Case",
+    "name": "MIDI CORSAIR CRYSTAL 280X WHITE RGB",
+    "price": 600,
+    "rate": 5,
+    "sub_category": "Desktop_PC"
+  },
+  {
+    "category": "Computers",
+    "component_type": "PC_Case",
+    "name": "MASTERCASE SL600M",
+    "price": 730,
+    "rate": 6,
+    "sub_category": "Desktop_PC"
+  },
+  {
+    "category": "Computers",
+    "component_type": "PC_Case",
+    "name": "COSMOS C700P",
+    "price": 1050,
+    "rate": 7.5,
+    "sub_category": "Desktop_PC"
+  },
+  {
+    "category": "Computers",
+    "component_type": "PC_Case",
+    "name": "COSMOS C700P BLACK EDITION",
+    "price": 1250,
+    "rate": 9,
+    "sub_category": "Desktop_PC"
+  },
+  {
+    "category": "Computers",
+    "component_type": "PC_Case",
+    "name": "COSMOS C700M",
+    "price": 1600,
+    "rate": 10,
+    "sub_category": "Desktop_PC"
+  },
+  {
+    "category": "Computers",
+    "component_type": "RAM",
+    "name": "TEAM GROUP ELITE 4 GB DDR4",
+    "price": 70,
+    "rate": 3,
+    "sub_category": "Desktop_PC / Laptop"
+  },
+  {
+    "category": "Computers",
+    "component_type": "RAM",
+    "name": "TEAM GROUP DELTA RGB 8GB DDR4",
+    "price": 170,
+    "rate": 6,
+    "sub_category": "Desktop_PC / Laptop"
+  },
+  {
+    "category": "Computers",
+    "component_type": "RAM",
+    "name": "TEAM GROUP DELTA 16GB DDR4",
+    "price": 240,
+    "rate": 9,
+    "sub_category": "Desktop_PC / Laptop"
+  },
+  {
+    "category": "Computers",
+    "component_type": "HDD",
+    "name": "SEGATE BARRACUDA 1 To",
+    "price": 180,
+    "rate": 2,
+    "sub_category": "Desktop_PC / Laptop"
+  },
+  {
+    "category": "Computers",
+    "component_type": "HDD",
+    "name": "SEGATE BARRACUDA 2 To",
+    "price": 220,
+    "rate": 4,
+    "sub_category": "Desktop_PC / Laptop"
+  },
+  {
+    "category": "Computers",
+    "component_type": "HDD",
+    "name": "SEGATE BARRACUDA 4 To",
+    "price": 390,
+    "rate": 6,
+    "sub_category": "Desktop_PC / Laptop"
+  },
+  {
+    "category": "Computers",
+    "component_type": "HDD",
+    "name": "SEGATE BARRACUDA 6 To",
+    "price": 630,
+    "rate": 8,
+    "sub_category": "Desktop_PC / Laptop"
+  },
+  {
+    "category": "Computers",
+    "component_type": "HDD",
+    "name": "SEGATE BARRACUDA 8 To",
+    "price": 890,
+    "rate": 10,
+    "sub_category": "Desktop_PC / Laptop"
+  },
+  {
+    "category": "Computers",
+    "component_type": "SSD",
+    "name": "TEAM GROUP GX1 2.5 240 Go",
+    "price": 130,
+    "rate": 2,
+    "sub_category": "Desktop_PC / Laptop"
+  },
+  {
+    "category": "Computers",
+    "component_type": "SSD",
+    "name": "TEAM GROUP GX1 2.5 480 Go",
+    "price": 220,
+    "rate": 3.5,
+    "sub_category": "Desktop_PC / Laptop"
+  },
+  {
+    "category": "Computers",
+    "component_type": "SSD",
+    "name": "TEAM GROUP GX2 2.5 1 To",
+    "price": 400,
+    "rate": 6.5,
+    "sub_category": "Desktop_PC / Laptop"
+  },
+  {
+    "category": "Computers",
+    "component_type": "SSD",
+    "name": "TEAM GROUP GX2 2.5 2 To",
+    "price": 830,
+    "rate": 9.5,
+    "sub_category": "Desktop_PC / Laptop"
+  },
+  {
+    "category": "Computers",
+    "component_type": "Power_Supply",
+    "name": "COOLER MASTER MWE 450W 80 WHITE",
+    "price": 130,
+    "rate": 2,
+    "sub_category": "Desktop_PC"
+  },
+  {
+    "category": "Computers",
+    "component_type": "Power_Supply",
+    "name": "COOLER MASTER MWE 550W BRONZE",
+    "price": 160,
+    "rate": 3.5,
+    "sub_category": "Desktop_PC"
+  },
+  {
+    "category": "Computers",
+    "component_type": "Power_Supply",
+    "name": "COOLER MASTER MWE 650W BRONZE",
+    "price": 190,
+    "rate": 4.5,
+    "sub_category": "Desktop_PC"
+  },
+  {
+    "category": "Computers",
+    "component_type": "Power_Supply",
+    "name": "COOLER MASTER 750W BRONZE",
+    "price": 240,
+    "rate": 6,
+    "sub_category": "Desktop_PC"
+  },
+  {
+    "category": "Computers",
+    "component_type": "Power_Supply",
+    "name": "COOLER MASTER V1000W 80 PLUS GOLD",
+    "price": 560,
+    "rate": 8,
+    "sub_category": "Desktop_PC"
+  },
+  {
+    "category": "Computers",
+    "component_type": "Power_Supply",
+    "name": "FST AURUM PT PLATINUM 1200W",
+    "price": 770,
+    "rate": 9,
+    "sub_category": "Desktop_PC"
+  }
+]

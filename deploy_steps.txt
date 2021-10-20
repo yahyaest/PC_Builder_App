@@ -4,9 +4,19 @@
 3-heroku git:remote -a  flask-pc-builder-
 3.5-heroku addons:create heroku-postgresql:hobby-dev --app flask-pc-builder-app
 3.5-heroku config --app flask-pc-builder-app
-heroku addons:attach heroku-postgresql -a flask-pc-builder-app --as HEROKU_DATABASE
-heroku addons:detach DATABASE -a flask-pc-builder-app
+3.7-heroku addons:attach heroku-postgresql -a flask-pc-builder-app --as HEROKU_DATABASE
+3.7-heroku addons:detach DATABASE -a flask-pc-builder-app
+# //Go to the following screen on Heroku dashboard and click "Configure Add-on".
+# // On the next screen click "Settings".
+# //For DATABASE_URL, change its value from postgre:// to postgresql://
 4-git add .
 5-git commit -m "Init deploy"
 6-git push heroku master
 heroku run python
+>> from app import db
+>> db.create_all()
+>> exit()
+
+
+
+python -m flask run
