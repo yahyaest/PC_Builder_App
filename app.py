@@ -3,7 +3,7 @@ from flask import Flask, render_template, request, redirect, jsonify, json
 from flask_sqlalchemy import SQLAlchemy
 from flask_marshmallow import Marshmallow
 
-app = Flask(__name__,template_folder='Templates')
+app = Flask(__name__)
 app.secret_key = os.urandom(24)
 
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///PC_Component.db'
