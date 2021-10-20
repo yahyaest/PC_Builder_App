@@ -70,15 +70,16 @@ class OrdersSchema(ma.Schema):
 
 @app.route('/')
 def home():
-    f=open('component.json',)
-    data = json.load(f)
-    for i in range(len(data)):
-        #print(data[i])
-        new_component = PC_Component(category=data[i]["category"], component_type=data[i]["component_type"],
-                           name=data[i]["name"], price=data[i]["price"], rate=data[i]["rate"], sub_category=data[i]["sub_category"])
-        db.session.add(new_component)
-        db.session.commit()
-    f.close()
+    ##### Run only once to upload database #####
+    # f=open('component.json',)
+    # data = json.load(f)
+    # for i in range(len(data)):
+    #     #print(data[i])
+    #     new_component = PC_Component(category=data[i]["category"], component_type=data[i]["component_type"],
+    #                        name=data[i]["name"], price=data[i]["price"], rate=data[i]["rate"], sub_category=data[i]["sub_category"])
+    #     db.session.add(new_component)
+    #     db.session.commit()
+    # f.close()
     return render_template('index.html')
 
 
