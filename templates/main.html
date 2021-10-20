@@ -1,0 +1,141 @@
+{% extends 'base.html' %} {% block head %}
+<script src="../static/js/main.js"></script>
+<link rel="stylesheet" href="../static/css/main.css" />
+
+<title>Main</title>
+{% endblock%} {% block body %}
+<br />
+
+<h1>Build Your PC</h1>
+<br />
+<div class="component-container" id="three">
+  <div class="block">
+    <label class="label-name" for="exampleFormControlInput1">CPU :</label>
+    <div class="container-box">
+      <div class="select-box">
+        <div class="options-container" id="cpu"></div>
+        <div class="selected">Choose CPU</div>
+
+        <div class="search-box">
+          <input type="text" placeholder="Start Typing..." />
+        </div>
+      </div>
+    </div>
+  </div>
+  <br />
+
+  <div class="block">
+    <label class="label-name" for="exampleFormControlInput2">GPU :</label>
+    <div class="container-box">
+      <div class="select-box-2">
+        <div class="options-container-2" id="gpu"></div>
+        <div class="selected-2">Choose GPU</div>
+        
+        <div class="search-box-2">
+          <input type="text" placeholder="Start Typing..." />
+        </div>
+      </div>
+    </div>
+  </div>
+  <br />
+
+  <div class="block">
+    <label class="label-name" for="exampleFormControlInput2">MotherBoard :</label>
+    <div class="container-box">
+      <div class="select-box-2">
+        <div class="options-container-3" id="motherboard"></div>
+        <div class="selected-3">Choose MotherBoard</div>
+        
+        <div class="search-box-3">
+          <input type="text" placeholder="Start Typing..." />
+        </div>
+      </div>
+    </div>
+  </div>
+  <br />
+
+
+  <div class="block">
+    <label class="label-name" for="exampleFormControlInput2">PC_Case :</label>
+    <div class="container-box">
+      <div class="select-box-2">
+        <div class="options-container-4" id="pc-case"></div>
+        <div class="selected-4">Choose PC_Case</div>
+        
+        <div class="search-box-4">
+          <input type="text" placeholder="Start Typing..." />
+        </div>
+      </div>
+    </div>
+  </div>
+  <br />
+
+
+  <div class="block">
+    <label class="label-name" for="exampleFormControlInput2">Power_Supply :</label>
+    <div class="container-box">
+      <div class="select-box-2">
+        <div class="options-container-5" id="power-supply"></div>
+        <div class="selected-5">Choose Power_Supply</div>
+        
+        <div class="search-box-5">
+          <input type="text" placeholder="Start Typing..." />
+        </div>
+      </div>
+    </div>
+  </div>
+  <br />
+
+
+  <div class="block">
+    <label class="label-name" for="exampleFormControlInput2">RAM :</label>
+    <div class="container-box">
+      <div class="select-box-2">
+        <div class="options-container-6" id="ram"></div>
+        <div class="selected-6">Choose RAM</div>
+        
+        <div class="search-box-6">
+          <input type="text" placeholder="Start Typing..." />
+        </div>
+      </div>
+    </div>
+  </div>
+  <br />
+
+
+  <div class="block">
+    <label class="label-name" for="exampleFormControlInput2">SSD :</label>
+    <div class="container-box">
+      <div class="select-box-2">
+        <div class="options-container-7" id="ssd"></div>
+        <div class="selected-7">Choose SSD</div>
+
+        <div class="search-box-7">
+          <input type="text" placeholder="Start Typing..." />
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <br />
+
+
+  <div class="block">
+    <label class="label-name" for="exampleFormControlInput2">HDD :</label>
+    <div class="container-box">
+      <div class="select-box-2">
+        <div class="options-container-8" id="hdd"></div>
+        <div class="selected-8">Choose HDD</div>
+        
+        <div class="search-box-8">
+          <input type="text" placeholder="Start Typing..." />
+        </div>
+      </div>
+    </div>
+  </div>
+  <br />
+</div>
+<a class="btn btn-secondary" id="getData3" onclick="get_components()">
+  Get Data
+</a>
+{% endblock%}

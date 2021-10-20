@@ -1,0 +1,4 @@
+0-git init
+1-heroku login
+2-heroku create flask-pc-builder-app
+3-heroku git:remote -a  flask-pc-builder-app

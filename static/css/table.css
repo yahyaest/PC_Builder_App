@@ -1,0 +1,10 @@
+@media screen and (max-width: 800px) {.table-style{
+  font-size: 0.65rem;
+}}
+
+@media screen and (max-width: 550px) {.table-style{
+  font-size: 0.4rem;
+}
+
+td,th{padding: 0.4rem !important;}
+}

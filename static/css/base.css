@@ -1,0 +1,30 @@
+#search-wrapper {
+  position: absolute;
+  top: 0;
+  right: 0;
+
+  padding: 10px;
+  z-index: 100;
+}
+
+#search-field {
+  min-width: 100px;
+  padding: 5px;
+  z-index: 2147483647;
+}
+
+#ui-id-1 {
+  z-index: 9999;
+}
+
+.searchBox .list-group {
+  z-index: 1;
+  position: absolute;
+}
+
+img {
+  width: 100%;
+  margin-top: 2em;
+}
+
+

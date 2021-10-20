@@ -1,0 +1,43 @@
+{% extends 'base.html' %} {% block head %}
+<title>Components Table Data</title>
+<link rel="stylesheet" href="../static/css/table.css" />
+
+<script src="../static/js/table.js"></script>
+{% endblock%} {% block body %}
+<br />
+<h1>Components Table Data</h1>
+<br />
+
+<div class="table-responsive">
+  <table class="table table-striped table-light table-bordered table-style">
+    <thead>
+      <tr class="table-info">
+        <th scope="col">#</th>
+        <th scope="col">name</th>
+        <th scope="col">category</th>
+        <th scope="col">sub_category</th>
+        <th scope="col">component_type</th>
+        <th scope="col">price</th>
+        <th scope="col">rate</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      {% for component in Components %}
+
+      <tr>
+        <th scope="row" id="row"></th>
+        <td>{{ component.name }}</td>
+        <td>{{ component.category }}</td>
+        <td>{{ component.sub_category }}</td>
+        <td>{{ component.component_type }}</td>
+        <td>{{ component.price }}</td>
+        <td>{{ component.rate }}</td>
+      </tr>
+
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+
+{% endblock%}

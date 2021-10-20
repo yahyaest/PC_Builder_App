@@ -1,0 +1,178 @@
+{% extends 'base.html' %} {% block head %}
+<title>Order</title>
+<!-- <script src="../static/js/order.js"></script> -->
+<!-- <script src="../dist/main.js"></script> -->
+<link rel="stylesheet" href="../static/css/order.css" />
+{% endblock%} {% block body %}
+<br />
+<h1>Your PC Specs</h1>
+<br />
+<div class="card">
+  <div class="card-header">
+    Featured
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">Special title treatment</h5>
+    <p class="card-text">
+      With supporting text below as a natural lead-in to additional content.
+    </p>
+    <div class="component">
+      <div class="type">CPU:</div>
+      <div class="pos" id="cpu"></div>
+      <div class="price" id="cpu-price"></div>
+    </div>
+    <div class="component">
+      <div class="type">GPU:</div>
+      <div class="pos" id="gpu"></div>
+      <div class="price" id="gpu-price"></div>
+    </div>
+    <div class="component">
+      <div class="type">MotherBoard:</div>
+      <div class="pos" id="motherboard"></div>
+      <div class="price" id="motherboard-price"></div>
+    </div>
+    <div class="component">
+      <div class="type">PC_Case:</div>
+      <div class="pos" id="pc_case"></div>
+      <div class="price" id="pc_case-price"></div>
+    </div>
+    <div class="component">
+      <div class="type">Power_Supply:</div>
+      <div class="pos" id="power_supply"></div>
+      <div class="price" id="power_supply-price"></div>
+    </div>
+    <div class="component">
+      <div class="type">RAM:</div>
+      <div class="pos" id="ram"></div>
+      <div class="price" id="ram-price"></div>
+    </div>
+    <div class="component">
+      <div class="type">SSD:</div>
+      <div class="pos" id="ssd"></div>
+      <div class="price" id="ssd-price"></div>
+    </div>
+    <div class="component">
+      <div class="type">HDD:</div>
+      <div class="pos" id="hdd"></div>
+      <div class="price" id="hdd-price"></div>
+    </div>
+
+    <div class="result">
+      <label class="label" for="total-price">Total Price</label>
+      <div class="" id="total-price"></div>
+    </div>
+    <br />
+    <br />
+    <button
+      type="button"
+      class="btn btn-primary"
+      data-toggle="modal"
+      data-target="#exampleModal"
+      data-whatever="@mdo"
+    >
+      Add to Chart
+    </button>
+
+    <form method="POST">
+      <div
+        class="modal fade"
+        id="exampleModal"
+        tabindex="-1"
+        role="dialog"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Order</h5>
+              <button
+                type="button"
+                class="close"
+                data-dismiss="modal"
+                aria-label="Close"
+              >
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form>
+                <div class="form-group">
+                  <label for="recipient-name" class="col-form-label"
+                    >Name:</label
+                  >
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="name"
+                    name="name"
+                    required
+                  />
+                </div>
+
+                <div class="form-group">
+                  <label for="recipient-name" class="col-form-label"
+                    >Mail:</label
+                  >
+                  <input
+                    type="email"
+                    class="form-control"
+                    id="mail"
+                    name="mail"
+                    required
+                  />
+                </div>
+
+                <div class="form-group">
+                  <label for="recipient-name" class="col-form-label"
+                    >Bank:</label
+                  >
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="bank"
+                    name="bank"
+                    required
+                  />
+                </div>
+
+                <div class="form-group">
+                  <label for="recipient-name" class="col-form-label"
+                    >Price:</label
+                  >
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="price"
+                    name="price"
+                    required
+                  />
+                  <!-- <div class="" id="price" name="price"></div> -->
+                </div>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-dismiss="modal"
+              >
+                Close
+              </button>
+              <input
+                action="/order_message"
+                type="submit"
+                value="Send Order"
+                class="btn btn-primary"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+
+    <script src="../static/js/order.js"></script>
+
+    {% endblock%}
+  </div>
+</div>
