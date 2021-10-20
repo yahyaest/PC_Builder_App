@@ -1,7 +1,9 @@
 0-git init
 1-heroku login
 2-heroku create flask-pc-builder-app
-3-heroku git:remote -a  flask-pc-builder-app
+3-heroku git:remote -a  flask-pc-builder-
+3.5-heroku addons:create heroku-postgresql:hobby-dev --app flask-pc-builder-app
+3.5-heroku config --app flask-pc-builder-app
 4-git add .
 5-git commit -m "Init deploy"
 6-git push heroku master

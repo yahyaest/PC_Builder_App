@@ -6,7 +6,8 @@ from flask_marshmallow import Marshmallow
 app = Flask(__name__)
 app.secret_key = os.urandom(24)
 
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///PC_Component.db'
+#app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///PC_Component.db'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgres://yalramtyhvpjxp:034dcf8ea5d0672e8ba287038421f48b0bac336e6759a2a46fdcdfcb3b8ad0c4@ec2-44-195-240-222.compute-1.amazonaws.com:5432/dbhdo8t7o74v3c'
 
 db = SQLAlchemy(app)
 ma = Marshmallow(app)
