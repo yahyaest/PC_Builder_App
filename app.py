@@ -42,28 +42,40 @@ def main():
     price_list = []
     rate_list = []
 
-    Components = getComponent()
+    try:
+        Components = getComponent()
 
-    for component in Components:
-        name_list.append(component[1])
-        type_list.append(component[4])
-        price_list.append(component[5])
-        rate_list.append(component[6])
+        for component in Components:
+            name_list.append(component[1])
+            type_list.append(component[4])
+            price_list.append(component[5])
+            rate_list.append(component[6])
+    except Exception as e:
+        print(e)
+        Components = []
 
     return render_template('main.html', Components=Components, name_list=name_list, type_list=type_list, price_list=price_list, rate_list=rate_list)
 
 
 @app.route('/table')
 def table():
-    Components = getComponent()
+    try:
+        Components = getComponent()
+    except Exception as e:
+        print(e)
+        Components = []
 
     return render_template('table.html', Components=Components)
 
 
 @app.route('/data')
 def data():
-    Components = getComponent()
-    info = json.dumps(Components)
+    try:
+        Components = getComponent()
+        info = json.dumps(Components)
+    except Exception as e:
+        print(e)
+        info = []
 
     return jsonify({'Components': info})
 
@@ -89,11 +101,16 @@ def create():
     else:
         name_list = []
         price_list = []
-        Components = getComponent()
+        try:
+            Components = getComponent()
 
-        for component in Components:
-            name_list.append(component[1])
-            price_list.append(component[5])
+            for component in Components:
+                name_list.append(component[1])
+                price_list.append(component[5])
+
+        except Exception as e:
+            print(e)
+            Components = []
 
         return render_template('order.html', Components=Components, name_list=name_list, price_list=price_list)
 
@@ -106,7 +123,12 @@ def order_message():
 
 @app.route('/order_table')
 def order_table():
-    orders = getOrders()
+    try:
+        orders = getOrders()
+
+    except Exception as e:
+        print(e)
+        orders = []
 
     return render_template('order_table.html', orders=orders)
 

@@ -35,6 +35,7 @@ services:
 
   adminer:
     image: adminer
+    container_name: adminer
     ports:
       - 9090:8080
     restart: unless-stopped
