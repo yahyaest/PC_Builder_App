@@ -18,7 +18,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
     <!-- <script src="../static/js/search_copy.js"></script> -->
-    <link rel="stylesheet" href="../static/css/base.css" />
+    <link rel="stylesheet" href="..{{ app_domain }}/static/css/base.css" />
     {% block head %} {% endblock%}
   </head>
 
@@ -26,12 +26,12 @@
     <header>
       <!-- Fixed navbar -->
       <nav class="navbar navbar-expand-sm navbar-dark fixed-top bg-dark">
-        <a class="navbar-brand" href="/">PC Builder</a>
+        <a class="navbar-brand" href="{{ url_for('app_bp.home') }}">PC Builder</a>
 
         <div class="" id="navbarCollapse">
           <ul class="navbar-nav mr-auto flex-row">
             <li class="nav-item active mx-1">
-              <a class="nav-link" href="/"
+              <a class="nav-link" href="{{ url_for('app_bp.home') }}"
                 >Home <span class="sr-only">(current)</span></a
               >
             </li>
@@ -49,9 +49,9 @@
                 Data
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="/data" target="_blank">JSON</a>
-                <a class="dropdown-item" href="/table">Components Table</a>
-                <a class="dropdown-item" href="/order_table">Orders Table</a>
+                <a class="dropdown-item" href="{{ url_for('app_bp.data') }}" target="_blank">JSON</a>
+                <a class="dropdown-item" href="{{ url_for('app_bp.table') }}">Components Table</a>
+                <a class="dropdown-item" href="{{ url_for('app_bp.order_table') }}">Orders Table</a>
               </div>
             </li>
           </ul>
@@ -61,7 +61,7 @@
       </nav>
     </header>
 
-    <img src="../static/images/ccmainbanner-1.jpg" alt="" />
+    <img src="..{{ app_domain }}/static/images/ccmainbanner-1.jpg" alt="" />
 
     <main role="main">
       <div class="container">
@@ -71,6 +71,8 @@
         {% block body %} {% endblock%}
       </div>
     </main>
+
+    <h1>{{x}}</h1>
 
     <footer class="footer mt-auto">
       <nav class="navbar-expand-sm bottom navbar-light bg-light py-4">

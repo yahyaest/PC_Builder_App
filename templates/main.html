@@ -1,6 +1,7 @@
 {% extends 'base.html' %} {% block head %}
-<script src="../static/js/main.js"></script>
-<link rel="stylesheet" href="../static/css/main.css" />
+<script>var appDomain = "{{ app_domain }}";</script>
+<script src="..{{ app_domain }}/static/js/main.js"></script>
+<link rel="stylesheet" href="..{{ app_domain }}/static/css/main.css" />
 
 <title>Main</title>
 {% endblock%} {% block body %}
