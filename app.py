@@ -1,7 +1,14 @@
 import os
 import psycopg2
-from flask import Flask, render_template, request, redirect, jsonify, json
+from flask import Flask, render_template, request, redirect, jsonify, json, Blueprint
 import json
+
+environment = os.environ['ENV']
+app_domain = os.environ['DOMAIN'] if environment == 'PROD' else ''
+
+app_bp = Blueprint('app_bp', __name__,
+    template_folder='templates',
+    static_folder='static')
 
 app = Flask(__name__)
 
@@ -30,12 +37,12 @@ def getOrders():
     conn.close()
     return orders
 
-@app.route('/')
+@app_bp.route('/')
 def home():
-    return render_template('index.html')
+    return render_template('index.html', app_domain=app_domain)
 
 
-@app.route('/main')
+@app_bp.route('/main')
 def main():
     name_list = []
     type_list = []
@@ -54,10 +61,10 @@ def main():
         print(e)
         Components = []
 
-    return render_template('main.html', Components=Components, name_list=name_list, type_list=type_list, price_list=price_list, rate_list=rate_list)
+    return render_template('main.html', Components=Components, name_list=name_list, type_list=type_list, price_list=price_list, rate_list=rate_list, app_domain=app_domain)
 
 
-@app.route('/table')
+@app_bp.route('/table')
 def table():
     try:
         Components = getComponent()
@@ -65,10 +72,10 @@ def table():
         print(e)
         Components = []
 
-    return render_template('table.html', Components=Components)
+    return render_template('table.html', Components=Components, app_domain=app_domain)
 
 
-@app.route('/data')
+@app_bp.route('/data')
 def data():
     try:
         Components = getComponent()
@@ -80,7 +87,7 @@ def data():
     return jsonify({'Components': info})
 
 
-@app.route('/order', methods=['GET', 'POST'])
+@app_bp.route('/order', methods=['GET', 'POST'])
 def create():
     if request.method == 'POST':
         name = request.form['name']
@@ -97,7 +104,7 @@ def create():
         conn.close()
         #print(name, mail, bank, price)
 
-        return redirect('/order_message')
+        return redirect(f'{app_domain}/order_message')
     else:
         name_list = []
         price_list = []
@@ -112,16 +119,16 @@ def create():
             print(e)
             Components = []
 
-        return render_template('order.html', Components=Components, name_list=name_list, price_list=price_list)
+        return render_template('order.html', Components=Components, name_list=name_list, price_list=price_list, app_domain=app_domain)
 
 
-@app.route('/order_message')
+@app_bp.route('/order_message')
 def order_message():
 
     return render_template('order_message.html')
 
 
-@app.route('/order_table')
+@app_bp.route('/order_table')
 def order_table():
     try:
         orders = getOrders()
@@ -130,11 +137,15 @@ def order_table():
         print(e)
         orders = []
 
-    return render_template('order_table.html', orders=orders)
+    return render_template('order_table.html', orders=orders, app_domain=app_domain)
 
 
 if __name__ == "__main__":
     app.jinja_env.auto_reload = True
     app.config['TEMPLATES_AUTO_RELOAD'] = True
     app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0
+    if environment == "PROD":
+        app.register_blueprint(app_bp, url_prefix=app_domain)
+    else:
+        app.register_blueprint(app_bp)
     app.run(debug=True, host='0.0.0.0')

@@ -1,6 +1,5 @@
 //export let components_list = new Array();
 let components_list = new Array();
-
 let data_name = $("#name-list").data();
 data_name = data_name.name.split("'");
 data_name = data_name.join('"');
@@ -227,7 +226,7 @@ function get_components() {
   }
   console.log(components_list);
   localStorage.setItem("transfer", components_list);
-  window.document.location = "/order";
+  window.document.location = appDomain + "/order";
 }
 
 function sleep(ms) {
