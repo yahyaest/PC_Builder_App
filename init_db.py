@@ -2,9 +2,15 @@ import os
 import json
 import psycopg2
 
-conn = psycopg2.connect(
+try:
+    conn = psycopg2.connect(
+            host="postgres",
+            database="pc_builder_db",
+            user=os.environ['DB_USERNAME'],
+            password=os.environ['DB_PASSWORD'])
+except:
+    conn = psycopg2.connect(
         host="postgres",
-        database="pc_builder_db",
         user=os.environ['DB_USERNAME'],
         password=os.environ['DB_PASSWORD'])
 
