@@ -55,12 +55,14 @@ app_bp = Blueprint('app_bp', __name__,
 def home():
     return render_template('index.html', app_domain=app_domain)
 
-# Apply Blueprint with url_prefix in production mode
+# Apply Blueprint with url_prefix in production mode after all routes
+if environment == "PROD":
+    app.register_blueprint(app_bp, url_prefix=app_domain)
+else:
+    app.register_blueprint(app_bp)
+
 if __name__ == "__main__":
-    if environment == "PROD":
-        app.register_blueprint(app_bp, url_prefix=app_domain)
-    else:
-        app.register_blueprint(app_bp)
+...
 ```
 - In template files : 
 <br>

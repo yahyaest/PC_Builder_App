@@ -13,12 +13,13 @@ services:
     volumes:
       - .:/app
     environment:
-      - PYTHONUNBUFFERED=1
+      # - PYTHONUNBUFFERED=1
       - LOG_LEVEL=INFO
       - DOMAIN=/pc-builder-app
       - ENV=PROD
     env_file:
       - .env
+    command: sh -c "chmod +x ./entrypoint.sh && ./entrypoint.sh"
 
 
   postgres:
@@ -34,6 +35,16 @@ services:
       - POSTGRES_DB=pc_builder_db
     volumes:
       - postgres-pc-builder:/var/lib/postgresql/data
+
+  nginx:
+    image: nginx:latest
+    container_name: nginx
+    ports:
+      - "8080:80"
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf
+      - ./nginx/conf.d:/etc/nginx/conf.d
+      - ./nginx/html:/usr/share/nginx/html/
 
 
   adminer:

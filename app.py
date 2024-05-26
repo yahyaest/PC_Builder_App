@@ -8,6 +8,8 @@ environment = os.environ['ENV']
 app_domain = os.environ['DOMAIN'] if environment == 'PROD' else ''
 logger = setup_logging()
 
+logger.info('Starting PC Builder App')
+
 app_bp = Blueprint('app_bp', __name__,
     template_folder='templates',
     static_folder='static')
@@ -61,6 +63,7 @@ def main():
 
     try:
         Components = getComponent()
+        logger.info(f'{len(Components)} Components retrieved successfully')
 
         for component in Components:
             name_list.append(component[1])
@@ -151,12 +154,17 @@ def order_table():
     return render_template('order_table.html', orders=orders, app_domain=app_domain)
 
 
+if environment == "PROD":
+    logger.info('Running in PROD environment')
+    app.register_blueprint(app_bp, url_prefix=app_domain)
+    logger.info(f'Blueprint registered with domain: {app_domain}')
+else:
+    logger.info('Running in DEV environment')
+    app.register_blueprint(app_bp)
+    logger.info('Blueprint registered')
+
 if __name__ == "__main__":
     app.jinja_env.auto_reload = True
     app.config['TEMPLATES_AUTO_RELOAD'] = True
     app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0
-    if environment == "PROD":
-        app.register_blueprint(app_bp, url_prefix=app_domain)
-    else:
-        app.register_blueprint(app_bp)
-    app.run(debug=True, host='0.0.0.0')
+    app.run(debug=True, host='0.0.0.0', port=5000)
