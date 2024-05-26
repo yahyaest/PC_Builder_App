@@ -1,6 +1,9 @@
 import os
 import json
 import psycopg2
+from logger import setup_logging
+
+logger = setup_logging()
 
 try:
     conn = psycopg2.connect(
@@ -22,8 +25,9 @@ cur = conn.cursor()
 try:
     cur.execute('DROP DATABASE IF EXISTS pc_builder_db;')
     cur.execute('CREATE DATABASE pc_builder_db;')
+    logger.info("DATABASE pc_builder_db created successfully")
 except:
-    print("DATABASE pc_builder_db already exist")
+    logger.warning("DATABASE pc_builder_db already exist")
 
 # Execute a command: this creates a new table
 try:
@@ -36,8 +40,9 @@ try:
                                     'price integer NOT NULL,'
                                     'rate integer NOT NULL);'
                                     )
+    logger.info("TABLE pc_component created successfully")
 except:
-    print("TABLE pc_component already exist")
+    logger.warning("TABLE pc_component already exist")
 
 try:
     cur.execute('DROP TABLE IF EXISTS orders;')
@@ -47,11 +52,13 @@ try:
                                     'bank varchar (50) NOT NULL,'
                                     'price integer NOT NULL);'
                                     )
+    logger.info("TABLE orders created successfully")
 except:
-    print("TABLE orders already exist")
+    logger.warning("TABLE orders already exist")
 
 
 # Populate the pc_component table 
+logger.info("Populating pc_component table")
 f=open('component.json',)
 data = json.load(f)
 for i in range(len(data)):
@@ -70,3 +77,4 @@ conn.commit()
 
 cur.close()
 conn.close()
+logger.info("Database initialization completed successfully")

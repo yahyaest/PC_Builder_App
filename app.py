@@ -1,10 +1,12 @@
 import os
 import psycopg2
-from flask import Flask, render_template, request, redirect, jsonify, json, Blueprint
 import json
+from flask import Flask, render_template, request, redirect, jsonify, json, Blueprint
+from logger import setup_logging
 
 environment = os.environ['ENV']
 app_domain = os.environ['DOMAIN'] if environment == 'PROD' else ''
+logger = setup_logging()
 
 app_bp = Blueprint('app_bp', __name__,
     template_folder='templates',
@@ -20,22 +22,30 @@ def get_db_connection():
     return conn
 
 def getComponent():
-    conn = get_db_connection()
-    cur = conn.cursor()
-    cur.execute('SELECT * FROM pc_component;')
-    components = cur.fetchall()
-    cur.close()
-    conn.close()
-    return components
+    try:
+        logger.debug('Getting components from database')
+        conn = get_db_connection()
+        cur = conn.cursor()
+        cur.execute('SELECT * FROM pc_component;')
+        components = cur.fetchall()
+        cur.close()
+        conn.close()
+        return components
+    except Exception as e:
+        logger.error(e)
 
 def getOrders():
-    conn = get_db_connection()
-    cur = conn.cursor()
-    cur.execute('SELECT * FROM orders;')
-    orders = cur.fetchall()
-    cur.close()
-    conn.close()
-    return orders
+    try:
+        logger.debug('Getting orders from database')
+        conn = get_db_connection()
+        cur = conn.cursor()
+        cur.execute('SELECT * FROM orders;')
+        orders = cur.fetchall()
+        cur.close()
+        conn.close()
+        return orders
+    except Exception as e:
+        logger.error(e)
 
 @app_bp.route('/')
 def home():
@@ -58,7 +68,7 @@ def main():
             price_list.append(component[5])
             rate_list.append(component[6])
     except Exception as e:
-        print(e)
+        logger.error(e)
         Components = []
 
     return render_template('main.html', Components=Components, name_list=name_list, type_list=type_list, price_list=price_list, rate_list=rate_list, app_domain=app_domain)
@@ -69,7 +79,7 @@ def table():
     try:
         Components = getComponent()
     except Exception as e:
-        print(e)
+        logger.error(e)
         Components = []
 
     return render_template('table.html', Components=Components, app_domain=app_domain)
@@ -81,7 +91,7 @@ def data():
         Components = getComponent()
         info = json.dumps(Components)
     except Exception as e:
-        print(e)
+        logger.error(e)
         info = []
 
     return jsonify({'Components': info})
@@ -90,6 +100,7 @@ def data():
 @app_bp.route('/order', methods=['GET', 'POST'])
 def create():
     if request.method == 'POST':
+        logger.info('Creating order')
         name = request.form['name']
         mail = request.form['mail']
         bank = request.form['bank']
@@ -102,7 +113,7 @@ def create():
         conn.commit()
         cur.close()
         conn.close()
-        #print(name, mail, bank, price)
+        logger.info(f'Order created successfully with name: {name}, mail: {mail}, bank: {bank}, price: {price}')
 
         return redirect(f'{app_domain}/order_message')
     else:
@@ -116,7 +127,7 @@ def create():
                 price_list.append(component[5])
 
         except Exception as e:
-            print(e)
+            logger.error(e)
             Components = []
 
         return render_template('order.html', Components=Components, name_list=name_list, price_list=price_list, app_domain=app_domain)
@@ -134,7 +145,7 @@ def order_table():
         orders = getOrders()
 
     except Exception as e:
-        print(e)
+        logger.error(e)
         orders = []
 
     return render_template('order_table.html', orders=orders, app_domain=app_domain)

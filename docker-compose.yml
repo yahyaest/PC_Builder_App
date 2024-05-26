@@ -14,6 +14,7 @@ services:
       - .:/app
     environment:
       - PYTHONUNBUFFERED=1
+      - LOG_LEVEL=INFO
       - DOMAIN=/pc-builder-app
       - ENV=PROD
     env_file:
